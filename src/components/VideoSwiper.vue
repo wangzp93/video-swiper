@@ -22,6 +22,11 @@
             :src="item.src"
             class="video-content"
         ></video>
+
+          <div class="bottom-down">
+            <div class="bd-left"></div>
+            <div class="bd-right"> 上划播放 <img src="../assets/arrow-top.png" /></div>
+          </div>
       </div>
     </swiper-slide>
   </swiper>
@@ -168,14 +173,14 @@ export default {
 .video-wrap {
   width: 100%;
   height: 100%;
-  background: #111;
   position: relative;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(#000 0%, #C00 50%, #000 100%);
 }
 
 /* 视频标题 */
-.video-title {
+.video-wrap .video-title {
   position: absolute;
   top: 0;
   padding: 16px 22px;
@@ -186,10 +191,38 @@ export default {
   line-height: 28px;
 }
 
-.video-content {
+/* 视频内容 */
+.video-wrap .video-content {
   width: 100%;
   height: 100px;
   flex: 1;
 }
 
+/* 视频底部 */
+.bottom-down {
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #000;
+}
+
+.bottom-down .bd-left {
+  width: 54px;
+  height: 32px;
+}
+
+.bottom-down .bd-right {
+  display: flex;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.bottom-down .bd-right img {
+  margin-left: 3px;
+  width: 22px;
+  height: 22px;
+}
 </style>
